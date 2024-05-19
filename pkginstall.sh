@@ -12,3 +12,6 @@ sudo apt install gh && gh auth login
 gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
+
+sudo apt install touchpad-indicator
+# Then open touchpad-indicator to disable touchpad when mouse is plugged in
