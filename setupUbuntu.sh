@@ -8,6 +8,9 @@ sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+#install gdevelop
+flatpak install flathub io.gdevelop.ide
+
 # install gh copilot
 sudo apt install gh && gh auth login
 gh extension install github/gh-copilot
