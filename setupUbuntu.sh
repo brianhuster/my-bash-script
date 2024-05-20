@@ -1,4 +1,10 @@
 sudo apt update && sudo apt upgrade -y
+# install gh copilot
+sudo apt install gh && gh auth login
+gh extension install github/gh-copilot
+gh extension upgrade gh-copilot
+echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
+
 sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
@@ -47,12 +53,6 @@ flatpak install flathub io.gdevelop.ide
 
 #teams
 flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
-
-# install gh copilot
-sudo apt install gh && gh auth login
-gh extension install github/gh-copilot
-gh extension upgrade gh-copilot
-echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # config touchpad
 sudo apt install touchpad-indicator
