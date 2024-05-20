@@ -12,18 +12,6 @@ sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-#install gdevelop
-flatpak install flathub io.gdevelop.ide
-
-#teams
-flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
-
-# install gh copilot
-sudo apt install gh && gh auth login
-gh extension install github/gh-copilot
-gh extension upgrade gh-copilot
-echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
-
 # python
 sudo apt install -y python3-pip
 pip install -U scikit-learn
@@ -46,6 +34,19 @@ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 gem install jekyll bundler
+
+
+#install gdevelop
+flatpak install flathub io.gdevelop.ide
+
+#teams
+flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
+
+# install gh copilot
+sudo apt install gh && gh auth login
+gh extension install github/gh-copilot
+gh extension upgrade gh-copilot
+echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # config touchpad
 sudo apt install touchpad-indicator
