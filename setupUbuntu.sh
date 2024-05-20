@@ -2,7 +2,10 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
+
+# install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
+ollama pull stable-code
 
 # install flatpak and flathub
 sudo apt install flatpak
