@@ -1,17 +1,17 @@
 sudo apt update && sudo apt upgrade -y
+
 # install gh copilot
 sudo apt install gh && gh auth login
 gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
+# install programming tools
 sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
 sudo apt install -y mysql-server
 sudo apt install -y mongodb-org
-
-# python
 sudo apt install -y python3-pip
 
 #Install Vietnamese and Japanese input method
