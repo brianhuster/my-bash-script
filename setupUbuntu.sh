@@ -42,7 +42,6 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 gem install jekyll bundler
 
-
 #install gdevelop
 flatpak install flathub io.gdevelop.ide
 
