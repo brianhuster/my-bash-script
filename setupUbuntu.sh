@@ -15,6 +15,9 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 #install gdevelop
 flatpak install flathub io.gdevelop.ide
 
+#teams
+flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
+
 # install gh copilot
 sudo apt install gh && gh auth login
 gh extension install github/gh-copilot
@@ -22,7 +25,7 @@ gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # python
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 pip install -U scikit-learn
 pip install transformers torch 
 
