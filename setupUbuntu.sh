@@ -9,10 +9,17 @@ echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 # install programming tools
 sudo apt install build-essential
 sudo apt install git
-sudo apt install -y npm
 sudo apt install -y mysql-server
 sudo apt install -y mongodb-org
 sudo apt install -y python3-pip python3-venv
+
+# installs nvm and node
+sudo apt remove nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install --lts
 
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
