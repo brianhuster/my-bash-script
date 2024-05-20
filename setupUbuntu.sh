@@ -21,6 +21,11 @@ gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
+# python
+sudo apt install python3-pip
+pip install -U scikit-learn
+pip install transformers torch 
+
 #VScode
 sudo apt-get install wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
