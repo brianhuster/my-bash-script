@@ -12,6 +12,7 @@ sudo apt install git
 sudo apt install -y mysql-server
 sudo apt install -y mongodb-org
 sudo apt install -y python3-pip python3-venv
+pip install -y jupyterlab sckit-learn
 
 # installs nvm and node
 sudo apt remove nodejs
