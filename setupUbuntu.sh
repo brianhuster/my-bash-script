@@ -2,6 +2,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
+sudo apt install -y mysql-server
+sudo apt install -y mongodb-org
 
 # python
 sudo apt install -y python3-pip
