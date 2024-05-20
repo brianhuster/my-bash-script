@@ -3,6 +3,12 @@ sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
 
+#Install Vietnamese and Japanese input method
+echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get update
+sudo apt-get install -y ibus ibus-bamboo ibus-mozc --install-recommends
+ibus restart
+
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
 ollama pull stable-code
