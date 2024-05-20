@@ -30,6 +30,10 @@ env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['Bamb
 
 #install neovim
 sudo apt install neovim
+mkdir -p ~/.config/nvim
+touch ~/.config/nvim/init.vim
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
