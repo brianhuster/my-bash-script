@@ -12,7 +12,7 @@ sudo apt install git
 sudo apt install -y npm
 sudo apt install -y mysql-server
 sudo apt install -y mongodb-org
-sudo apt install -y python3-pip
+sudo apt install -y python3-pip python3-venv
 
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
