@@ -2,6 +2,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
+curl -fsSL https://ollama.com/install.sh | sh
 
 # install flatpak and flathub
 sudo apt install flatpak
