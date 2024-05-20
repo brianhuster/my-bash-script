@@ -3,6 +3,9 @@ sudo apt install build-essential
 sudo apt install git
 sudo apt install -y npm
 
+# python
+sudo apt install -y python3-pip
+
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
 sudo apt-get update
@@ -18,11 +21,6 @@ ollama pull stable-code
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-# python
-sudo apt install -y python3-pip
-pip install -U scikit-learn
-pip install transformers torch 
 
 #VScode
 sudo apt-get install wget gpg
