@@ -36,12 +36,6 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cat "config.vim" > "$HOME/.config/nvim/init.vim"
 
-install 1.1.1.1
-sudo apt install cloudflare-warp
-warp-cli registration new
-warp-cli connect
-curl https://www.cloudflare.com/cdn-cgi/trace/
-
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
 ollama pull stable-code
