@@ -1,3 +1,32 @@
+" Initialize vim-plug
+call plug#begin()
+
+" Plugins to install
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'pocco81/auto-save.nvim'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+" Configure NERDTree
+" open NERDTree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
+autocmd VimEnter * execute 'NERDTree' | wincmd w | execute 'belowright split | terminal' | resize 10 | wincmd h
+
+let g:NERDTreeGitStatusWithFlags = 1
+"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:NERDTreeGitStatusNodeColorization = 1
+"let g:NERDTreeColorMapCustom = {
+"\ "Staged"    : "#0ee375",  
+"\ "Modified"  : "#d9bf91",  
+"\ "Renamed"   : "#51C9FC",  
+"\ "Untracked" : "#FCE77C",  
+"\ "Unmerged"  : "#FC51E6",  
+"\ "Dirty"     : "#FFBD61",  
 "\ "Clean"     : "#87939A",   
 "\ "Ignored"   : "#808080"   
 "\ }
