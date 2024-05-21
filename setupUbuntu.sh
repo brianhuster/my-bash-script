@@ -13,14 +13,15 @@ sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
 pip install -y jupyterlab sckit-learn
 
-# install warp terminal
-sudo apt-get install wget gpg
-wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
-sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
-rm warpdotdev.gpg
-sudo apt update && sudo apt install warp-terminal 
-sudo apt install yakuake
+# set up Konsole terminal
+if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
+       sudo apt-get install konsole -y
+       mkdir -p ~/.local/share/konsole
+       cd ~/.local/share/konsole
+       touch Brianhuster.profile
+       echo -e "[Appearance]\nFont=Hack,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > Brianhuster.profile
+       cd ~
+fi
 
 # installs nvm and node
 sudo apt remove nodejs
