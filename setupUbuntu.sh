@@ -22,7 +22,7 @@ if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
        echo -e "[Appearance]\nFont=Hack,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > Brianhuster.profile
        cd ~
 fi
-# Next time opening Konsole, just choose the profile named "Brianhuster"
+# Next time opening Konsole, just choose the profile named "Brianhuster" and set it as "Default"
 
 # installs nvm and node
 sudo apt remove nodejs
