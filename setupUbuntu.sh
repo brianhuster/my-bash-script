@@ -13,6 +13,14 @@ sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
 pip install -y jupyterlab sckit-learn
 
+# install warp terminal
+sudo apt-get install wget gpg
+wget -qO- https://releases.warp.dev/linux/keys/warp.asc | gpg --dearmor > warpdotdev.gpg
+sudo install -D -o root -g root -m 644 warpdotdev.gpg /etc/apt/keyrings/warpdotdev.gpg
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/warpdotdev.gpg] https://releases.warp.dev/linux/deb stable main" > /etc/apt/sources.list.d/warpdotdev.list'
+rm warpdotdev.gpg
+sudo apt update && sudo apt install warp-terminal
+
 # installs nvm and node
 sudo apt remove nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
