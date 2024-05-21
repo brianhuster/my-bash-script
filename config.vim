@@ -13,7 +13,7 @@ call plug#end()
 " open NERDTree automatically
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree
-autocmd VimEnter * belowright split | terminal | resize 10
+autocmd VimEnter * execute 'NERDTree' | wincmd w | execute 'belowright split | terminal' | resize 10 | wincmd h
 
 let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
