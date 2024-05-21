@@ -8,7 +8,7 @@ echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # install programming tools
 sudo apt install build-essential
-sudo apt install git docker
+sudo apt install -y git docker
 sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
 pip install -y jupyterlab sckit-learn
