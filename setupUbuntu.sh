@@ -8,9 +8,8 @@ echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # install programming tools
 sudo apt install build-essential
-sudo apt install git
-sudo apt install -y mysql-server
-sudo apt install -y mongodb-org
+sudo apt install git docker
+sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
 pip install -y jupyterlab sckit-learn
 
@@ -21,6 +20,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
 
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
