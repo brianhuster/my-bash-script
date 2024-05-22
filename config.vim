@@ -8,6 +8,7 @@ Plug 'github/copilot.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
+Plug 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' } 
 
 call plug#end()
 
