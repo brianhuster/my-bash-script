@@ -5,6 +5,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'pocco81/auto-save.nvim'
 Plug 'tpope/vim-commentary'
@@ -18,20 +19,21 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * execute 'NERDTree' | wincmd w | execute 'belowright split | terminal' | resize 10 | wincmd h
 
 let g:NERDTreeGitStatusWithFlags = 1
-"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-"let g:NERDTreeGitStatusNodeColorization = 1
-"let g:NERDTreeColorMapCustom = {
-"\ "Staged"    : "#0ee375",  
-"\ "Modified"  : "#d9bf91",  
-"\ "Renamed"   : "#51C9FC",  
-"\ "Untracked" : "#FCE77C",  
-"\ "Unmerged"  : "#FC51E6",  
-"\ "Dirty"     : "#FFBD61",  
-"\ "Clean"     : "#87939A",   
-"\ "Ignored"   : "#808080"   
-"\ }
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeColorMapCustom = {
+\ "Staged"    : "#0ee375",  
+\ "Modified"  : "#d9bf91",  
+\ "Renamed"   : "#51C9FC",  
+\ "Untracked" : "#FCE77C",  
+\ "Unmerged"  : "#FC51E6",  
+\ "Dirty"     : "#FFBD61",  
+\ "Clean"     : "#87939A",   
+\ "Ignored"   : "#808080"   
+\ }
 
 let g:NERDTreeIgnore = ['^node_modules$']
+let g:auto_save = 1
 
 " Configure Coc
 " Keybindings for Coc
@@ -59,11 +61,9 @@ let g:coc_global_extensions = [
 
 " Configure Airline-themes
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop=0
 let g:airline_theme='ayu_light'
-let g:airline#extensions#tabline#formatter = 'default'
 
 " Navigation between buffers
 nnoremap <M-Right> :bn<cr>
