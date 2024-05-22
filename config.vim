@@ -7,7 +7,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pocco81/auto-save.nvim'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
@@ -72,9 +71,6 @@ nnoremap <c-x> :bp \|bd #<cr>
 
 " How to exit terminal
 tnoremap <Esc> <C-\><C-n> 
-
-" In normal mode, type \a to turn on/off autosave
-vim.api.nvim_set_keymap("n", "<leader>a", ":ASToggle<CR>", {})
 
 " General settings
 set mouse=a
