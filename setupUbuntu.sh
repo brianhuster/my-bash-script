@@ -74,11 +74,10 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 gem install jekyll bundler
 
-#install gdevelop
+#install from flatpak
 flatpak install flathub io.gdevelop.ide
-
-#teams
 flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
+flatpak install flathub com.vivaldi.Vivaldi
 
 # config touchpad
 sudo apt install touchpad-indicator
