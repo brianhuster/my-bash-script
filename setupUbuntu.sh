@@ -79,7 +79,7 @@ flatpak install flathub io.gdevelop.ide
 flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
 
 # install wine
-sudo apt install wine32 wine64
+sudo apt install wine32 wine64 winetricks
 winetricks corefonts
 
 # config touchpad
