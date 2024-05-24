@@ -77,7 +77,10 @@ gem install jekyll bundler
 #install from flatpak
 flatpak install flathub io.gdevelop.ide
 flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
-flatpak install flathub com.vivaldi.Vivaldi
+
+# install wine
+sudo apt install wine32 wine64
+winetricks corefonts
 
 # config touchpad
 sudo apt install touchpad-indicator
