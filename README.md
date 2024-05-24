@@ -2,6 +2,5 @@
 
 ```bash
 git clone https://github.com/brianhuster/my-bash-script/
-cd my-bash-script
-bash setupUbuntu.sh
+bash my-bash-script/setupUbuntu.sh
 ```
