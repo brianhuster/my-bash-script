@@ -18,6 +18,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * NERDTree
 autocmd VimEnter * execute 'NERDTree' | wincmd w | execute 'belowright split | terminal' | resize 10 | wincmd h
 
+" Save the file when leaving insert mode
+autocmd InsertLeave * silent! write
+
+" Save the file when losing focus or leaving the buffer
+autocmd BufLeave,FocusLost * silent! write
+
 let g:NERDTreeGitStatusWithFlags = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1
