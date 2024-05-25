@@ -1,3 +1,5 @@
+# add repository for Linux graphic drivers
+sudo add-apt-repository ppa:oibaf/graphics-drivers
 sudo apt update && sudo apt upgrade -y
 
 # install gh copilot
