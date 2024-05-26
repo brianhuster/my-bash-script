@@ -42,13 +42,17 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
 #install neovim
-sudo apt install neovim
+sudo apt-get install software-properties-common
+echo | sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install -y neovim
 mkdir -p ~/.config/nvim
 touch ~/.config/nvim/init.vim
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone https://github.com/brianhuster/vim-config/
 cat "vim-config/init.vim" > "$HOME/.config/nvim/init.vim"
+cat "neovim-config/coc-
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
