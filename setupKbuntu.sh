@@ -52,7 +52,7 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone https://github.com/brianhuster/vim-config/
 cat "vim-config/init.vim" > "$HOME/.config/nvim/init.vim"
-cat "neovim-config/coc-
+cat "neovim-config/coc-settings.json" > "$HOME/.config/nvim/init.vim"
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
