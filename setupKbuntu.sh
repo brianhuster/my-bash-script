@@ -47,7 +47,8 @@ mkdir -p ~/.config/nvim
 touch ~/.config/nvim/init.vim
 curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cat "config.vim" > "$HOME/.config/nvim/init.vim"
+git clone https://github.com/brianhuster/vim-config/
+cat "vim-config/init.vim" > "$HOME/.config/nvim/init.vim"
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
