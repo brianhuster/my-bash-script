@@ -47,7 +47,7 @@ env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['Bamb
 
 #install neovim
 sudo apt-get install software-properties-common
-echo | sudo add-apt-repository ppa:neovim-ppa/unstable
+echo | sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install -y neovim
 mkdir -p ~/.config/nvim
