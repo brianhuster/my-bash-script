@@ -51,8 +51,9 @@ echo | sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install -y neovim
 mkdir ~/.config
-git clone https://github.com/brianhuster/vim-config/
-mv neovim-config ~/.config/nvim
+git clone https://github.com/brianhuster/neovim-config/
+mv neovim-config nvim
+mv nvim ~/.config
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
