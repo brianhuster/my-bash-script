@@ -15,6 +15,13 @@ sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
 pip install -y jupyterlab sckit-learn
 
+# install Hack Nerd Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
+unzip Hack.zip
+rm Hack.zip
+mv *.ttf ~/.local/share/fonts/
+fc-cache -fv
+
 # set up Konsole terminal
 if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
        sudo apt-get install konsole -y
