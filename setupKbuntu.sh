@@ -50,13 +50,9 @@ sudo apt-get install software-properties-common
 echo | sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install -y neovim
-mkdir -p ~/.config/nvim
-touch ~/.config/nvim/init.vim
-curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir ~/.config
 git clone https://github.com/brianhuster/vim-config/
-cat "neovim-config/init.vim" > "$HOME/.config/nvim/init.vim"
-cat "neovim-config/coc-settings.json" > "$HOME/.config/nvim/init.vim"
+mv neovim-config ~/.config/nvim
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
