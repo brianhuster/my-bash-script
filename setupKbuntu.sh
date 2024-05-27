@@ -18,11 +18,8 @@ pip install -y jupyterlab sckit-learn
 # set up Konsole terminal
 if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
        sudo apt-get install konsole -y
-       mkdir -p ~/.local/share/konsole
-       cd ~/.local/share/konsole
-       touch Brianhuster.profile
-       echo -e "[Appearance]\nFont=Hack,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > Brianhuster.profile
-       cd ~
+       touch -p echo -e "[Appearance]\nFont=Hack Nerd Font,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > ~/.local/share/konsole/Brianhuster.profile
+       echo -e "[Appearance]\nFont=Hack Nerd Font,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > ~/.local/share/konsole/Brianhuster.profile
 fi
 # Next time opening Konsole, just choose the profile named "Brianhuster" and set it as "Default"
 
