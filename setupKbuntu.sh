@@ -96,6 +96,9 @@ flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
 # install wine
 sudo apt install wine32 wine64 winetricks
 winetricks corefonts
+sudo mkdir -p ~/opt/wine-stable/share/wine/gecko
+sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi
+sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86_64.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi
 
 # config touchpad
 sudo apt install touchpad-indicator
