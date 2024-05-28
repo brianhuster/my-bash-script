@@ -26,16 +26,16 @@ fc-cache -fv
 if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
        sudo apt-get install konsole -y
        touch -p echo -e "[Appearance]\nFont=Hack Nerd Font,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > ~/.local/share/konsole/Brianhuster.profile
-       cat <<- EOF
-              [Appearance]
-              Font=Hack Nerd Font,14,-1,5,50,0,0,0,0,0
-              
-              [General]
-              Name=Brianhuster
-              Parent=FALLBACK/
-       EOF > ~/.local/share/konsole/Brianhuster.profile
+       {
+              echo "[Appearance]"
+              echo "ColorScheme=Linux"
+              echo "Font=Hack Nerd Font,14,-1,5,50,0,0,0,0,0"
+              echo        
+              echo "[General]"
+              echo "Name=Brianhuster"
+              echo "Parent=FALLBACK/"
+       } > ~/.local/share/konsole/Brianhuster.profile
 fi
-# Next time opening Konsole, just choose the profile named "Brianhuster" and set it as "Default"
 
 # installs nvm and node
 sudo apt remove nodejs
