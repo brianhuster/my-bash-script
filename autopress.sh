@@ -5,5 +5,5 @@ keypress(){
 }
 while true; do
     keypress
-    sleep 1t
+    sleep 10
 done
