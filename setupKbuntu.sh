@@ -61,7 +61,7 @@ sudo apt-get install -y ibus ibus-bamboo ibus-mozc --install-recommends
 ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
-#install neovim
+# install neovim
 sudo apt-get install software-properties-common
 echo | sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
@@ -79,7 +79,6 @@ ollama pull stable-code
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo apt install xdotool
 
 #VScode
 sudo apt-get install wget gpg
@@ -109,6 +108,13 @@ winetricks corefonts
 sudo mkdir -p ~/opt/wine-stable/share/wine/gecko
 sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi
 sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86_64.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi
+
+# install other apps
+sudo snap install spotify
+sudo apt install xdotool
+flatpak install flathub com.brave.Browser
+sudo apt install kdenlive
+sudo apt install obs-studio
 
 # config touchpad
 sudo apt install touchpad-indicator
