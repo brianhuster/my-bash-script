@@ -114,21 +114,9 @@ sudo apt install xdotool
 sudo apt install kdenlive
 sudo apt install obs-studio
 
-# install onlyoffice
-sudo apt-get install -y postgresql
-sudo -i -u postgres psql -c "CREATE USER onlyoffice WITH PASSWORD 'onlyoffice';"
-sudo -i -u postgres psql -c "CREATE DATABASE onlyoffice OWNER onlyoffice;"
-sudo apt-get install rabbitmq-server
-mkdir -p -m 700 ~/.gnupg
-curl -fsSL https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE | gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --import
-chmod 644 /tmp/onlyoffice.gpg
-sudo chown root:root /tmp/onlyoffice.gpg
-sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
-sudo apt-get update
+# install onlyofficex
 sudo apt-get install ttf-mscorefonts-installer
-sudo apt-get install onlyoffice-documentserver
-sudo systemctl start ds-example
-sudo systemctl enable ds-example
+sudo snap install onlyoffice-desktopeditors
 
 # config touchpad
 sudo apt install touchpad-indicator
