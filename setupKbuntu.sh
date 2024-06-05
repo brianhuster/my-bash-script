@@ -79,6 +79,9 @@ ollama pull stable-code
 sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub io.gdevelop.ide
+flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
+flatpak install flathub com.brave.Browser
 
 #VScode
 sudo apt-get install wget gpg
@@ -98,10 +101,6 @@ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 gem install jekyll bundler
 
-#install from flatpak
-flatpak install flathub io.gdevelop.ide
-flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
-
 # install wine
 sudo apt install wine32 wine64 winetricks
 winetricks corefonts
@@ -112,10 +111,24 @@ sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86_64.msi htt
 # install other apps
 sudo snap install spotify
 sudo apt install xdotool
-flatpak install flathub com.brave.Browser
 sudo apt install kdenlive
 sudo apt install obs-studio
 
+# install onlyoffice
+sudo apt-get install -y postgresql
+sudo -i -u postgres psql -c "CREATE USER onlyoffice WITH PASSWORD 'onlyoffice';"
+sudo -i -u postgres psql -c "CREATE DATABASE onlyoffice OWNER onlyoffice;"
+sudo apt-get install rabbitmq-server
+mkdir -p -m 700 ~/.gnupg
+curl -fsSL https://download.onlyoffice.com/GPG-KEY-ONLYOFFICE | gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --import
+chmod 644 /tmp/onlyoffice.gpg
+sudo chown root:root /tmp/onlyoffice.gpg
+sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
+sudo apt-get update
+sudo apt-get install ttf-mscorefonts-installer
+sudo apt-get install onlyoffice-documentserver
+sudo systemctl start ds-example
+sudo systemctl enable ds-example
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
