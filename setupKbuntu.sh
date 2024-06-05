@@ -129,6 +129,7 @@ sudo apt-get install ttf-mscorefonts-installer
 sudo apt-get install onlyoffice-documentserver
 sudo systemctl start ds-example
 sudo systemctl enable ds-example
+
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
