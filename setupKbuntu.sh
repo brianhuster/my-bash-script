@@ -17,6 +17,9 @@ gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
+sudo apt-get install xclip
+sudo apt-get install xsel
+
 # install programming tools
 sudo apt install build-essential
 sudo apt install -y git docker
