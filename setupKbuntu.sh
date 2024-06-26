@@ -12,9 +12,9 @@ sudo apt install -y \
   mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all vainfo hwinfo clinfo
 
 # install gh copilot
-sudo apt install gh && gh auth login
-gh extension install github/gh-copilot
-gh extension upgrade gh-copilot
+sudo apt install -y gh && gh auth login
+gh extension install -y github/gh-copilot
+gh extension upgrade -y gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # lazygit
@@ -22,8 +22,8 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 
-sudo apt-get install xclip
-sudo apt-get install xsel
+sudo apt-get install -y xclip
+sudo apt-get install -y xsel
 
 # install programming tools
 sudo apt install build-essential
@@ -93,14 +93,14 @@ flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
 flatpak install flathub com.brave.Browser
 
 #VScode
-sudo apt-get install wget gpg
+sudo apt-get install -y wget gpg
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
 rm -f packages.microsoft.gpg
-sudo apt install apt-transport-https
+sudo apt install -y apt-transport-https
 sudo apt update
-sudo apt install code # or code-insiders
+sudo apt install -y code # or code-insiders
 
 #Jekyll
 sudo apt-get install ruby-full zlib1g-dev
