@@ -91,6 +91,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install flathub io.gdevelop.ide
 flatpak install -y flathub com.github.IsmaelMartinez.teams_for_linux
 flatpak install flathub com.brave.Browser
+flatpak install flathub com.usebottles.bottles
 
 #VScode
 sudo apt-get install -y wget gpg
