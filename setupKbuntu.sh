@@ -128,6 +128,9 @@ sudo apt install obs-studio
 sudo apt-get install ttf-mscorefonts-installer
 sudo snap install onlyoffice-desktopeditors
 
+# install newest kde desktop
+sudo add-apt-repository ppa:kubuntu-ppa/backports-extra && sudo apt full-upgrade -y
+
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
