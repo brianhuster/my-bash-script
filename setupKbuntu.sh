@@ -11,6 +11,8 @@ sudo apt install -y \
   libglapi-mesa libgles2-mesa-dev libglx-mesa0 libigdgmm12 libxatracker2 mesa-va-drivers \
   mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all vainfo hwinfo clinfo
 
+sudo apt install curl
+
 # install gh copilot
 sudo apt install -y gh && gh auth login
 gh extension install -y github/gh-copilot
