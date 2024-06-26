@@ -38,6 +38,7 @@ pip install -y jupyterlab sckit-learn
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
 unzip Hack.zip
 rm Hack.zip
+mkdir -p ~/.local/share/fonts/
 mv *.ttf ~/.local/share/fonts/
 fc-cache -fv
 
