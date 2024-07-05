@@ -15,8 +15,8 @@ sudo apt install curl
 
 # install gh copilot
 sudo apt install -y gh && gh auth login
-gh extension install -y github/gh-copilot
-gh extension upgrade -y gh-copilot
+gh extension install github/gh-copilot
+gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 # lazygit
