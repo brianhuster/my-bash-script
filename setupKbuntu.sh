@@ -12,6 +12,7 @@ sudo apt install -y \
   mesa-vdpau-drivers mesa-vulkan-drivers va-driver-all vainfo hwinfo clinfo
 
 sudo apt install curl
+sudo apt install lm-sensors
 
 # install gh copilot
 sudo apt install -y gh && gh auth login
