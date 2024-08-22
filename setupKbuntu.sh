@@ -20,7 +20,7 @@ BACKUP_FILE="/etc/default/grub.bak"
 echo "Creating a backup of the current GRUB configuration..."
 sudo cp $GRUB_FILE $BACKUP_FILE
 echo "Modifying GRUB configuration..."
-sudo sed -i 's/GRUB_CMDLINE_LINUX="/&acpi_osi=\!Windows2021 /' $GRUB_FILE
+sudo sed -i 's/GRUB_CMDLINE_LINUX="/&acpi_osi=\Windows2022 /' $GRUB_FILE
 echo "Updating GRUB..."
 sudo update-grub
 
