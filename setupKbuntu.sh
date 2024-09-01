@@ -96,14 +96,7 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
 # install neovim
-sudo apt-get install software-properties-common
-echo | sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install -y neovim
-mkdir ~/.config
-git clone https://github.com/brianhuster/neovim-config/
-mv neovim-config nvim
-mv nvim ~/.config
+sudo snap install nvim
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
