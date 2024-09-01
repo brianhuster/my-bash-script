@@ -96,7 +96,7 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
 # install neovim
-sudo snap install nvim
+sudo snap install nvim --classic
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
@@ -111,7 +111,7 @@ flatpak install flathub com.brave.Browser
 flatpak install flathub com.usebottles.bottles
 
 #VScode
-sudo snap install code
+sudo snap install code --classic
 
 #Jekyll
 sudo apt-get install ruby-full zlib1g-dev
