@@ -40,7 +40,7 @@ sudo apt-get install -y xclip
 sudo apt-get install -y xsel
 
 # install programming tools
-sudo apt install build-essential
+sudo apt install build-essential ccls
 sudo apt install -y git docker
 sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
