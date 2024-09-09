@@ -13,6 +13,7 @@ sudo apt install -y \
 
 sudo apt install curl
 sudo apt install lm-sensors
+sudo apt install ubuntu-restricted-extras
 
 # configure grub
 GRUB_FILE="/etc/default/grub"
