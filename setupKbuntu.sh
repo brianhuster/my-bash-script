@@ -14,6 +14,7 @@ sudo apt install -y \
 sudo apt install curl
 sudo apt install lm-sensors
 sudo apt install ubuntu-restricted-extras
+sudo usermod -a -G dialout $USER
 
 # configure grub
 GRUB_FILE="/etc/default/grub"
