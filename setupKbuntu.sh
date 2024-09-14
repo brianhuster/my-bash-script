@@ -138,6 +138,10 @@ sudo apt install xdotool
 sudo apt install kdenlive
 sudo apt install obs-studio
 
+# konsave
+pipx install konsave
+pipx inject konsave setuptools
+
 # install onlyofficex
 sudo apt-get install ttf-mscorefonts-installer
 sudo snap install onlyoffice-desktopeditors
