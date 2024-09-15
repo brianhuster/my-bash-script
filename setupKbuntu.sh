@@ -144,6 +144,14 @@ sudo snap install onlyoffice-desktopeditors
 # install newest kde desktop
 sudo add-apt-repository ppa:kubuntu-ppa/backports-extra && sudo apt full-upgrade -y
 
+# config kde desktop
+pipx install konsave
+sudo apt install python3-setuptools
+pipx inject konsave setuptools
+git clone https://github.com/brianhuster/kubuntu-w11x
+mv kubuntu-w11x ~/.config/konsave/profiles/kubuntu-w11x
+konsave -a kubuntu-w11x
+
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
