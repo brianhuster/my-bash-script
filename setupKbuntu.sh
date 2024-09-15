@@ -152,6 +152,10 @@ git clone https://github.com/brianhuster/kubuntu-w11x
 mv kubuntu-w11x ~/.config/konsave/profiles/kubuntu-w11x
 konsave -a kubuntu-w11x
 
+# autopress
+chmod +x my-bash-script/autopress.sh
+sudo mv my-bash-script/autopress.sh /usr/local/bin/autopress
+
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
