@@ -1,4 +1,4 @@
-# autopress.sh - A script to automatically press a key (`Alt`) on keyboard to keep screen on
+#!/bin/bash
 
 keypress(){
     xdotool key Alt
