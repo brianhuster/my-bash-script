@@ -104,7 +104,6 @@ sudo snap install nvim --classic
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
-ollama pull stable-code
 
 # install flatpak and flathub
 sudo apt install flatpak
