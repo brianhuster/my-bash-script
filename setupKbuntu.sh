@@ -148,7 +148,7 @@ sudo add-apt-repository ppa:kubuntu-ppa/backports-extra && sudo apt full-upgrade
 pipx install konsave
 sudo apt install python3-setuptools
 pipx inject konsave setuptools
-git clone https://github.com/brianhuster/kubuntu-w11x
+git clone --depth 1 https://github.com/brianhuster/kubuntu-w11x
 mv kubuntu-w11x ~/.config/konsave/profiles/kubuntu-w11x
 konsave -a kubuntu-w11x
 
