@@ -108,6 +108,12 @@ sudo mkdir -p ~/opt/wine-stable/share/wine/gecko
 sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86.msi
 sudo wget -O ~/opt/wine-stable/share/wine/gecko/wine-gecko-2.47.1-x86_64.msi https://dl.winehq.org/wine/wine-gecko/2.47.1/wine-gecko-2.47.1-x86_64.msi
 
+# Install dotfiles
+git clone --depth 1 https://github.com/brianhuster/dotfiles
+cd dotfiles
+bash install.sh
+cd -
+
 # install other apps
 sudo snap install spotify
 sudo apt install xdotool
