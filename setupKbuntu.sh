@@ -27,7 +27,7 @@ echo "Updating GRUB..."
 sudo update-grub
 
 
-# install gh copilot
+# install gh
 sudo apt install -y gh && gh auth login
 gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
@@ -58,29 +58,6 @@ curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
 echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 sudo apt-get update
 sudo apt-get install -y mongodb-org
-
-# install Hack Nerd Font
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
-unzip Hack.zip
-rm Hack.zip
-mkdir -p ~/.local/share/fonts/
-mv *.ttf ~/.local/share/fonts/
-fc-cache -fv
-
-# set up Konsole terminal
-if [[ $XDG_CURRENT_DESKTOP == *"KDE"* ]]; then
-       sudo apt-get install konsole -y
-       touch -p echo -e "[Appearance]\nFont=Hack Nerd Font,14,-1,5,50,0,0,0,0,0\n\n[General]\nName=Brianhuster\nParent=FALLBACK/" > ~/.local/share/konsole/Brianhuster.profile
-       {
-              echo "[Appearance]"
-              echo "ColorScheme=Linux"
-              echo "Font=Hack Nerd Font,14,-1,5,50,0,0,0,0,0"
-              echo        
-              echo "[General]"
-              echo "Name=Brianhuster"
-              echo "Parent=FALLBACK/"
-       } > ~/.local/share/konsole/Brianhuster.profile
-fi
 
 # installs nvm and node
 sudo apt remove nodejs
@@ -143,14 +120,6 @@ sudo snap install onlyoffice-desktopeditors
 
 # install newest kde desktop
 sudo add-apt-repository ppa:kubuntu-ppa/backports-extra && sudo apt full-upgrade -y
-
-# config kde desktop
-pipx install konsave
-sudo apt install python3-setuptools
-pipx inject konsave setuptools
-git clone --depth 1 https://github.com/brianhuster/kubuntu-w11x
-mv kubuntu-w11x ~/.config/konsave/profiles/kubuntu-w11x
-konsave -a kubuntu-w11x
 
 # autopress
 chmod +x my-bash-script/autopress.sh
