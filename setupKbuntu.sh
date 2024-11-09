@@ -78,6 +78,7 @@ env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['Bamb
 
 # install neovim
 sudo snap install nvim --classic
+flatpak install flathub org.vim.Vim
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
