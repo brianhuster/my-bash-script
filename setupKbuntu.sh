@@ -76,9 +76,15 @@ sudo apt-get install -y ibus ibus-bamboo ibus-mozc --install-recommends
 ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
+# Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /home/brianhuster/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/brianhuster/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # install neovim
 sudo snap install nvim --classic
-flatpak install flathub org.vim.Vim
+brew install vim
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
@@ -88,7 +94,6 @@ sudo apt install flatpak
 sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub io.gdevelop.ide
-flatpak install flathub com.brave.Browser
 flatpak install flathub com.usebottles.bottles
 
 #VScode
