@@ -33,16 +33,11 @@ gh extension install github/gh-copilot
 gh extension upgrade gh-copilot
 echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
-# lazygit
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-
 sudo apt-get install -y xclip
 sudo apt-get install -y xsel
 
 # install programming tools
-sudo apt install build-essential ccls
+sudo apt install build-essential
 sudo apt install -y git docker
 sudo apt install -y mysql-server mongodb-org
 sudo apt install -y python3-pip python3-venv
@@ -66,8 +61,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
-npm install -g prettier
-npm install -g tree-sitter-cl
 
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
@@ -77,7 +70,7 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
 # install neovim
-sudo snap install nvim --classic
+sudo snap install nvim --classic --edge
 
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
@@ -92,13 +85,11 @@ flatpak install flathub com.usebottles.bottles
 #VScode
 sudo snap install code --classic
 
-#Jekyll
-sudo apt-get install ruby-full zlib1g-dev
-echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-gem install jekyll bundler
+#Windsurf
+curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list > /dev/null
+sudo apt-get update
+sudo apt-get install windsurf
 
 # install wine
 sudo apt install wine32 wine64 winetricks
