@@ -35,6 +35,9 @@ echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 sudo apt-get install -y xclip
 sudo apt-get install -y xsel
+sudo apt install -y zsh
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install programming tools
 sudo apt install build-essential
