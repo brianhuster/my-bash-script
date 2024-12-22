@@ -38,6 +38,7 @@ sudo apt-get install -y xsel
 sudo apt install -y zsh
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo echo "emulate sh -c 'source /etc/profile'" >> etc/zsh/zprofile
 
 # install programming tools
 sudo apt install build-essential
