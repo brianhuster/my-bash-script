@@ -66,6 +66,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 
+# Go
+sudo snap install go --classic
+
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
 sudo apt-get update
