@@ -68,6 +68,7 @@ nvm install --lts
 
 # Go
 sudo snap install go --classic
+go install github.com/jesseduffield/lazygit@latest
 
 #Install Vietnamese and Japanese input method
 echo | sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
