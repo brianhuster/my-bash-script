@@ -80,6 +80,9 @@ env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['Bamb
 # install neovim
 sudo snap install nvim --classic --edge
 
+# ghostty
+sudo snap install ghostty --classic
+
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
 
@@ -92,12 +95,6 @@ flatpak install flathub com.usebottles.bottles
 
 #VScode
 sudo snap install code --classic
-
-#Windsurf
-curl -fsSL "https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/windsurf.gpg" | sudo gpg --dearmor -o /usr/share/keyrings/windsurf-stable-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/windsurf-stable-archive-keyring.gpg arch=amd64] https://windsurf-stable.codeiumdata.com/wVxQEIWkwPUEAGf3/apt stable main" | sudo tee /etc/apt/sources.list.d/windsurf.list > /dev/null
-sudo apt-get update
-sudo apt-get install windsurf
 
 # install wine
 sudo apt install wine32 wine64 winetricks
