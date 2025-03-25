@@ -15,6 +15,7 @@ sudo apt install curl
 sudo apt install lm-sensors
 sudo apt install ubuntu-restricted-extras
 sudo usermod -a -G dialout $USER
+sudo usermod -aG plugdev $LOGNAME
 
 # configure grub
 GRUB_FILE="/etc/default/grub"
@@ -48,6 +49,7 @@ sudo apt install -y python3-pip python3-venv
 sudo apt install pipx
 sudo apt install jupyter-notebook
 sudo snap install arduino-cli
+sudo apt-get install android-sdk-platform-tools-common
 
 # Mongodb
 sudo apt-get install gnupg curl
