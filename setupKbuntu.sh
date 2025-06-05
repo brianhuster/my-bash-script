@@ -79,6 +79,9 @@ sudo apt-get install -y ibus ibus-bamboo ibus-mozc --install-recommends
 ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
+# fctx5
+sudo apt install fcitx5-bamboo --install-recommends
+
 # install neovim
 sudo snap install nvim --classic --edge
 
