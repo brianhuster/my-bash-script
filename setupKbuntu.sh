@@ -68,6 +68,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 
+# Coccoc
+curl https://browser-linux.coccoc.com/deb/public.gpg | sudo gpg --yes --dearmor -o /etc/apt/trusted.gpg.d/coccoc-browser.gpg
+echo "deb [arch=any] https://browser-linux.coccoc.com/deb/ stable main" | sudo tee /etc/apt/sources.list.d/coccoc-browser.list > /dev/null
+sudo apt update
+sudo apt install -y coccoc-browser-stable
+
 # Go
 sudo snap install go --classic
 go install github.com/jesseduffield/lazygit@latest
