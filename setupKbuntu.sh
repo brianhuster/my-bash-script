@@ -36,10 +36,8 @@ echo 'eval "$(gh copilot alias -- bash)"' >> ~/.bashrc
 
 sudo apt-get install -y xclip
 sudo apt-get install -y xsel
-sudo apt install -y zsh
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sudo echo "emulate sh -c 'source /etc/profile'" >> etc/zsh/zprofile
+sudo apt install -y fish
+chsh -s $(which fish)
 
 # install programming tools
 sudo apt install build-essential
@@ -81,7 +79,7 @@ ibus restart
 env DCONF_PROFILE=ibus dconf write /desktop/ibus/general/preload-engines "['BambooUs', 'Bamboo', 'mozc-jp']" && gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('ibus', 'Bamboo'), ('ibus', 'mozc-jp')]"
 
 # fctx5
-sudo apt install fcitx5-bamboo --install-recommends
+sudo apt install fcitx5-bamboo fcitx5-mozc fcitx5-pinyin --install-recommends
 
 # install neovim
 sudo snap install nvim --classic --edge
