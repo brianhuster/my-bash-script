@@ -15,6 +15,7 @@ $packages = [
 	"golang",
 	"gcc", "g++", "make",
 	"neovim",
+	"tree-sitter-cli",
 	"gh",
 	'flatpak',
 	'plasma-discover-backend-flatpak',
