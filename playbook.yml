@@ -1,0 +1,136 @@
+---
+- name: Install system packages
+  connection: local
+  hosts: localhost
+  vars:
+    apt_packages:
+      - curl
+      - lm-sensors
+      - fish
+      - git
+      - pipx
+      - cargo
+      - python3-pip
+      - python3-venv
+      - jupyter-notebook
+      - kdenlive
+      - obs-studio
+      - gnupg
+      - fcitx5
+      - fcitx5-unikey
+      - fcitx5-mozc
+      - fcitx5-pinyin
+      - mysql-server
+      - nodejs
+      - npm
+      - golang
+      - gcc
+      - g++
+      - make
+      - neovim
+      - gh
+      - flatpak
+      - plasma-discover-backend-flatpak
+      - ripgrep
+      - fzf
+
+      # LSP, debuggers, formatters
+      - clangd
+      - clang-format
+      - gopls
+      - delve
+      - python3-pylsp
+
+    intel_gpu_packages:
+      - intel-opencl-icd
+      - intel-level-zero-gpu
+      - level-zero
+      - intel-media-va-driver-non-free
+      - libmfx1
+      - libmfxgen1
+      - libvpl2
+      - libegl-mesa0
+      - libegl1-mesa
+      - libegl1-mesa-dev
+      - libgbm1
+      - libgl1-mesa-dev
+      - libgl1-mesa-dri
+      - libglapi-mesa
+      - libgles2-mesa-dev
+      - libglx-mesa0
+      - libigdgmm12
+      - libxatracker2
+      - mesa-va-drivers
+      - mesa-vdpau-drivers
+      - mesa-vulkan-drivers
+      - va-driver-all
+      - vainfo
+      - hwinfo
+      - clinfo
+
+  tasks:
+    - name: Detect sudo binary on remote machine
+      ansible.builtin.command:
+        cmd: "which sudo.ws"
+      register: check_sudo_ws
+      failed_when: false
+      changed_when: false
+
+    - name: Set become executable based on remote check
+      ansible.builtin.set_fact:
+        ansible_become_exe: "{{ check_sudo_ws.stdout if check_sudo_ws.rc == 0 else 'sudo' }}"
+
+    - name: Ensure packages are installed
+      ansible.builtin.package:
+        name: "{{ apt_packages }}"
+        state: present
+      become: true
+
+    - name: Install emmylua via cargo
+      community.general.cargo:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - emmylua_ls
+        - emmylua_formatter
+        - emmylua_check
+
+    - name: Install language servers via npm
+      community.general.npm:
+        name: "{{ item }}"
+        global: yes
+        state: present
+      become: true
+      loop:
+        - typescript
+        - "@tailwindcss/language-server"
+
+    - name: Install Neovim from edge channel
+      community.general.snap:
+        name: nvim
+        classic: true
+        channel: edge
+        state: present
+      become: true
+
+    - name: Install standard snaps (Spotify, OnlyOffice)
+      community.general.snap:
+        name:
+          - spotify
+          - onlyoffice-desktopeditors
+        state: present
+      become: true
+
+    - name: Add Flathub remote repository
+      community.general.flatpak_remote:
+        name: flathub
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        state: present
+      become: true
+
+    - name: Install Bottles via Flatpak
+      community.general.flatpak:
+        name: com.usebottles.bottles
+        remote: flathub
+        state: present
+      become: true
