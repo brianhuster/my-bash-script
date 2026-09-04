@@ -1,5 +1,4 @@
-sudo apt install puppet
-sudo puppet apply -v init.pp
+sudo apt install ansible
 
 # add repository for Intel graphic drivers
 wget -qO - https://repositories.intel.com/gpu/intel-graphics.key | \
@@ -58,32 +57,8 @@ sudo snap install ghostty --classic
 # install ollama and stablecode
 curl -fsSL https://ollama.com/install.sh | sh
 
-# install flatpak and flathub
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub com.usebottles.bottles
-
-# Install dotfiles
-git clone --depth 1 https://github.com/brianhuster/dotfiles
-cd dotfiles
-bash install.sh
-cd -
-
-# install other apps
-sudo snap install spotify
-
-# install onlyofficex
-sudo apt-get install ttf-mscorefonts-installer
-sudo snap install onlyoffice-desktopeditors
-
-# install newest kde desktop
-sudo add-apt-repository ppa:kubuntu-ppa/backports-extra && sudo apt full-upgrade -y
-
-# autopress
-chmod +x my-bash-script/autopress.sh
-sudo mv my-bash-script/autopress.sh /usr/local/bin/autopress
-
 # config touchpad
 sudo apt install touchpad-indicator
 # Then open touchpad-indicator to disable touchpad when mouse is plugged in
+
+ansible-playbook playbook.yml -K -vvvv
